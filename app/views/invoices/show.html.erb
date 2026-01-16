@@ -1,0 +1,109 @@
+<%= render 'layouts/header' %>
+
+<div class="h-auto lg:flex justify-center">
+  <div class="lg:w-[800px] lg:px-[32px] py-[16px] px-[16px] bg-white lg:bg-[unset]">
+    <div class="rounded-[22px] bg-white lg:bg-[#F6F6F6]">
+      <div class="p-[16px] lg:p-[32px] overflow-y-auto">
+        <div class="text-center lg:mb-4 pb-[16px] border-b border-[rgba(0,0,0,0.1)]">
+          <h1 class="text-2xl lg:text-3xl font-bold text-bnb_blue leading-tight">
+            Invoice Detail
+          </h1>
+        </div>
+        <section class="flex flex-col lg:flex-row justify-between gap-6 mb-8 border-b pb-4">
+          <div>
+            <p><strong>Name:</strong> <%= @customer.name.titleize %></p>
+            <p><strong>Address:</strong> <%= @customer.address.titleize %></p>
+            <p><strong>Tax No:</strong> <%= @customer.tax_number %></p>
+          </div>
+
+          <!-- RIGHT: INVOICE DETAILS -->
+          <div class="text-left lg:text-right">
+            <p><strong>Invoice No:</strong> <%= @invoice.invoice_number %></p>
+            <p><strong>Issue Date:</strong> <%= @invoice.issue_date.strftime('%d %b %Y') if @invoice.issue_date %></p>
+          </div>
+
+        </section>
+
+        <section>
+          <h3 class="text-lg font-semibold text-bnb_blue mb-4">Transactions</h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border border-gray-300 text-sm">
+              
+              <!-- TABLE HEADER -->
+              <thead class="bg-bnb_blue text-white">
+                <tr>
+                  <th class="px-4 py-2 text-left">Reference</th>
+                  <th class="px-4 py-2 text-left">Date</th>
+                  <th class="px-4 py-2 text-right">Amount</th>
+                  <th class="px-4 py-2 text-right">Tax</th>
+                  <th class="px-4 py-2 text-right">Total</th>
+                  <th class="px-4 py-2 text-center">Action</th>
+                </tr>
+              </thead>
+
+              <!-- TABLE BODY -->
+              <tbody>
+                <% @transactions.each do |t| %>
+                  <tr class="border-t hover:bg-gray-50">
+                    <td class="px-4 py-2">
+                      <%= t.external_transaction_ref %>
+                    </td>
+
+                    <td class="px-4 py-2">
+                      <%= t.transaction_date %>
+                    </td>
+
+                    <td class="px-4 py-2 text-right">
+                      <%= number_to_currency(t.amount) %>
+                    </td>
+
+                    <td class="px-4 py-2 text-right">
+                      <%= number_to_currency(t.tax_amount) %>
+                    </td>
+
+                    <td class="px-4 py-2 text-right">
+                      <%= number_to_currency(t.amount) %>
+                    </td>
+
+                    <!-- ACTION COLUMN -->
+                    <td class="px-4 py-2 text-center">
+                      <%= link_to edit_transaction_path(t),
+                        class: "inline-flex items-center justify-center p-2 rounded-full text-bnb_blue hover:bg-blue-100",
+                        title: "Edit transaction" do %>
+
+                        <i class="material-symbols-outlined !text-[20px] text-bnb_blue">edit</i>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+
+                <!-- TOTALS ROW -->
+                <tr class="border-t-2 font-semibold bg-gray-100">
+                  <td colspan="2" class="px-4 py-2 text-right">
+                    Totals
+                  </td>
+
+                  <td class="px-4 py-2 text-right text-bnb_blue">
+                    <%= number_to_currency(@amount_total) %>
+                  </td>
+
+                  <td class="px-4 py-2 text-right text-bnb_blue">
+                    <%= number_to_currency(@tax_total) %>
+                  </td>
+
+                  <td class="px-4 py-2 text-right text-bnb_blue">
+                    <%= number_to_currency(@grand_total) %>
+                  </td>
+
+                  <!-- EMPTY ACTION COLUMN -->
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

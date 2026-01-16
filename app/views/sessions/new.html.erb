@@ -1,0 +1,26 @@
+<%= render 'layouts/header' %>
+<div class="h-screen">
+  <div class="lg:flex justify-center lg:mt-[28px]">
+    <div class="lg:w-[600px] lg:bg-[rgb(247,250,253)] p-[32px] rounded-[16px] lg:shadow">
+      <h1 class="text-[22px] font-bold text-bnb_red text-center mb-[24px]">Login</h1>
+      <%= form_with(url: login_path, method: :post) do |form| %>
+              
+        <p class="mb-[8px]">Email</p>
+        <div class="form-group mb-[24px]">
+          <%= form.email_field :email, class: "form-input", placeholder: ' ' %>
+          <%= form.label :email, "Email", class: 'form-label' %>
+        </div>
+
+        <p class="mb-[8px]">Password</p>
+        <div class="form-group bg-[24px]">
+          <%= form.password_field :password, class: 'form-input', placeholder: ' ' %>
+          <%= form.label :password, "Password", class: 'form-label' %>
+        </div>
+
+        <div>
+          <%= form.submit "Login", class: 'btn-blue-bnb w-full mt-[24px]' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
