@@ -6,11 +6,29 @@
       <div class="p-[32px] overflow-y-auto">
 
         <!-- TITLE -->
-        <div class="text-center mb-6 pb-4 border-b border-[rgba(0,0,0,0.1)]">
+        <div class="flex justify-between items-center">
           <h1 class="text-2xl font-bold text-bnb_blue">
             Invoices Dashboard
           </h1>
+          <div>
+            <details class="relative inline-block">
+              <summary class="text-bnb_blue cursor-pointer list-none rounded-full w-[40px] h-[40px] flex justify-center items-center hover:bg-[rgb(37,45,96)] hover:text-white">
+                <i class="material-symbols-outlined">account_circle</i>
+              </summary>
+              <div class="absolute right-0 mt-2 w-40 bg-white border rounded-md shadow-lg">
+                <div class="flex items-center px-[16px] py-[12px] cursor-pointer text-gray-500">
+                  <%= button_to logout_path,
+                      method: :delete,
+                      class: "inline-flex items-center" do %>
+                    <span class="mr-[8px]">Log Out</span>
+                    <i class="material-symbols-outlined !text-[20px]">logout</i>
+                  <% end %>
+                </div>
+              </div>
+            </details>
+          </div>
         </div>
+        <div class="mb-6 pb-4 border-b border-[rgba(0,0,0,0.1)]"></div>
 
         <!-- Pagination + Create New Invoice Button -->
         <% if @invoices.total_pages > 1 || true %> <!-- 'true' ensures the button shows even if only 1 page -->
@@ -18,9 +36,9 @@
             
             <!-- Create New Invoice Button -->
             <div>
-              <%= link_to root_path,
+              <%= link_to new_invoice_path,
                   class: "inline-flex btn-blue-bnb-outline" do %>
-                <i class="material-symbols-outlined mr-[6px] !text-[20px] text-bnb_red">add</i>
+                <i class="material-symbols-outlined mr-[6px] !text-[20px]">add</i>
                 Create New Invoice
               <% end %>
             </div>

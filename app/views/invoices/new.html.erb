@@ -6,6 +6,12 @@
       <div data-controller="invoice">
         <%= form_with url: invoices_path, method: :post, local: true do |f| %>
           <div class="p-[32px] overflow-y-auto">
+            <div class="text-center mb-4 pb-[16px] border-b border-[rgba(0,0,0,0.1)]">
+              <h1 class="text-2xl font-bold text-bnb_blue leading-tight">
+                Create Invoice
+              </h1>
+            </div>
+
             <div id="invoice-container" data-invoice-target="container" data-stepper-target="invoiceContainer">
               <div class="flex justify-between items-center">
                   <button data-action="click->invoice#addTransaction"
@@ -13,7 +19,7 @@
                           type="button"
                           class="btn-blue-bnb-outline flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
                           id="add-transaction">
-                    <i class="material-symbols-outlined !text-[20px] text-bnb_red mr-[8px]">add</i>
+                    <i class="material-symbols-outlined !text-[20px] mr-[8px]">add</i>
                     Add Transaction
                   </button>
               </div>
