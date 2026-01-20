@@ -1,78 +1,108 @@
 import { Controller } from "@hotwired/stimulus";
-import { 
-  validMandatory, validCID, validPhone, validEmail 
+import {
+  validMandatory,
+  validCID,
+  validPhone,
+  validEmail
 } from "services/field-validation_services";
 
 export default class extends Controller {
   static targets = [
-    "name",
-    "nameError",
-    "cid",
-    "cidError",
-    "email",
-    "emailError",
-    "phone",
-    "phoneError",
-    "address",
-    "addressError",
+    "name", "nameError",
+    "cid", "cidError",
+    "email", "emailError",
+    "phone", "phoneError",
+    "address", "addressError",
     "submitButton"
   ];
 
   connect() {
-    this.initalName = this.nameTarget.value;
-    this.initalCID = this.cidTarget.value;
-    this.initalEmail = this.emailTarget.value;
-    this.initalPhone = this.phoneTarget.value;
-    this.initalAddress = this.addressTarget.value;
+    this.initialValues = {
+      name: this.nameTarget.value.trim(),
+      cid: this.cidTarget.value.trim(),
+      email: this.emailTarget.value.trim(),
+      phone: this.phoneTarget.value.trim(),
+      address: this.addressTarget.value.trim()
+    };
   }
 
   validateName() {
-    const isValid = validMandatory(this.nameTarget.value);
-    const message = isValid ? "" : "Invalid Name";
-
-    this.nameErrorTarget.textContent = message;
-    this.submitable()
+    this.validateField(
+      this.nameTarget,
+      this.nameErrorTarget,
+      validMandatory,
+      "Invalid Name"
+    );
   }
 
   validateCID() {
-    const isValid = validCID(this.cidTarget.value);
-    const message = isValid ? "" : "Invalid CID";
-
-    this.cidErrorTarget.textContent = message;
-    this.submitable()
+    this.validateOptionalField(
+      this.cidTarget,
+      this.cidErrorTarget,
+      validCID,
+      "Invalid CID"
+    );
   }
 
   validateEmail() {
-    const isValid = validEmail(this.emailTarget.value);
-    const message = isValid ? "" : "Invalid Email";
-
-    this.emailErrorTarget.textContent = message;
-    this.submitable()
+    this.validateOptionalField(
+      this.emailTarget,
+      this.emailErrorTarget,
+      validEmail,
+      "Invalid Email"
+    );
   }
 
   validatePhone() {
-    const isValid = validPhone(this.phoneTarget.value);
-    const message = isValid ? "" : "Invalid Phone";
-
-    this.phoneErrorTarget.textContent = message;
-    this.submitable()
+    this.validateOptionalField(
+      this.phoneTarget,
+      this.phoneErrorTarget,
+      validPhone,
+      "Invalid Phone"
+    );
   }
 
   validateAddress() {
-    const isValid = validMandatory(this.addressTarget.value);
-    const message = isValid ? "" : "Invalid Address";
-
-    this.addressErrorTarget.textContent = message;
-    this.submitable()
+    this.validateField(
+      this.addressTarget,
+      this.addressErrorTarget,
+      validMandatory,
+      "Invalid Address"
+    );
   }
 
-  submitable() {
-    const nameChanged = this.initalAmount !== this.nameTarget.value;
-    const cidChanged = this.initalAmount !== this.cidTarget.value;
-    const emailChanged = this.initalAmount !== this.emailTarget.value;
-    const phoneChanged = this.initalAmount !== this.phoneTarget.value;
-    const addressChanged = this.initalAmount !== this.addressTarget.value;
+  validateField(field, errorTarget, validator, message) {
+    const isValid = validator(field.value);
+    errorTarget.textContent = isValid ? "" : message;
+    this.updateSubmitState();
+  }
 
-    this.submitButtonTarget.disabled = !(nameChanged || cidChanged || emailChanged || phoneChanged || addressChanged);
+  validateOptionalField(field, errorTarget, validator, message) {
+    const value = field.value.trim();
+    const isValid = value === "" || validator(value);
+    errorTarget.textContent = isValid ? "" : message;
+    this.updateSubmitState();
+  }
+
+  updateSubmitState() {
+    this.submitButtonTarget.disabled = !(
+      this.hasDataChanged() && this.isDataValid()
+    );
+  }
+
+  hasDataChanged() {
+    return Object.keys(this.initialValues).some(key => {
+      return this.initialValues[key] !== this[`${key}Target`].value.trim();
+    });
+  }
+
+  isDataValid() {
+    return (
+      validMandatory(this.nameTarget.value) &&
+      (this.cidTarget.value.trim() === "" || validCID(this.cidTarget.value)) &&
+      (this.emailTarget.value.trim() === "" || validEmail(this.emailTarget.value)) &&
+      (this.phoneTarget.value.trim() === "" || validPhone(this.phoneTarget.value)) &&
+      validMandatory(this.addressTarget.value)
+    );
   }
 }

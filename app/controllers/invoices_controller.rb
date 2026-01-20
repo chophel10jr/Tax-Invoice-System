@@ -2,6 +2,12 @@ class InvoicesController < ApplicationController
   before_action :require_login, only: [:create]
   before_action :set_invoice, only: [:show, :edit, :update]
 
+  def index
+    @invoices = Invoice
+      .order(created_at: :desc)
+      .paginate(page: params[:page], per_page: 1)
+  end
+
   def show
     @customer = @invoice.customer
     @transactions = @invoice.transactions.order(:transaction_date)

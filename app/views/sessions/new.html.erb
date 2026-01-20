@@ -1,7 +1,8 @@
 <%= render 'layouts/header' %>
+
 <div class="h-screen">
-  <div class="lg:flex justify-center lg:mt-[28px]">
-    <div class="lg:w-[600px] lg:bg-[rgb(247,250,253)] p-[32px] rounded-[16px] lg:shadow">
+  <div class="flex justify-center mt-[28px]">
+    <div class="w-[900px] bg-[rgb(247,250,253)] p-[32px] rounded-[16px] shadow">
       <h1 class="text-[22px] font-bold text-bnb_red text-center mb-[24px]">Login</h1>
       <%= form_with(url: login_path, method: :post) do |form| %>
               

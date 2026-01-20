@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BNB Statement</title>
+  <title>Invoice Generation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -76,13 +76,25 @@
     padding: 12px 24px 12px 14px;
   }
   .btn-blue-bnb-outline {
-    color: var(--bnb-blue) !important;
-    font-weight: bold;
-    background-color: white !important;
-    border-radius: 6px !important;
-    padding: 12px 24px 12px 14px;
-    border: 2px solid var(--bnb-red);
+    background-color: white;
+    color: var(--bnb-blue);
+    border: 2px solid var(--bnb-blue);
+    padding: 8px 16px;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
   }
+
+  .btn-blue-bnb-outline:hover {
+    background-color: rgb(37, 45, 96);
+    color: white;
+  }
+
   .error-message {
     font-size: 12px;
   }

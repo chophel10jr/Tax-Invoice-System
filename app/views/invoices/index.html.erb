@@ -1,0 +1,125 @@
+<%= render 'layouts/header' %>
+
+<div class="h-auto flex justify-center">
+  <div class="w-[900px] px-[32px] py-[16px]">
+    <div class="rounded-[22px] bg-[#F6F6F6]">
+      <div class="p-[32px] overflow-y-auto">
+
+        <!-- TITLE -->
+        <div class="text-center mb-6 pb-4 border-b border-[rgba(0,0,0,0.1)]">
+          <h1 class="text-2xl font-bold text-bnb_blue">
+            Invoices Dashboard
+          </h1>
+        </div>
+
+        <!-- Pagination + Create New Invoice Button -->
+        <% if @invoices.total_pages > 1 || true %> <!-- 'true' ensures the button shows even if only 1 page -->
+          <div class="flex justify-between items-center mb-2">
+            
+            <!-- Create New Invoice Button -->
+            <div>
+              <%= link_to root_path,
+                  class: "inline-flex btn-blue-bnb-outline" do %>
+                <i class="material-symbols-outlined mr-[6px] !text-[20px] text-bnb_red">add</i>
+                Create New Invoice
+              <% end %>
+            </div>
+
+            <!-- Pagination -->
+            <% if @invoices.total_pages > 1 %>
+              <nav>
+                <ul class="flex items-center space-x-2">
+                  <!-- Backward Arrow -->
+                  <% if @invoices.previous_page %>
+                    <%= link_to url_for(page: @invoices.previous_page),
+                        class: "inline-flex items-center" do %>
+                      <i class="material-symbols-outlined">chevron_left</i>
+                    <% end %>
+                  <% end %>
+
+                  <!-- Current Page Info -->
+                  <li class="text-sm whitespace-nowrap">
+                    Page <%= @invoices.current_page %> of <%= @invoices.total_pages %>
+                  </li>
+
+                  <!-- Forward Arrow -->
+                  <% if @invoices.next_page %>
+                    <%= link_to url_for(page: @invoices.next_page),
+                        class: "inline-flex items-center" do %>
+                      <i class="material-symbols-outlined">chevron_right</i>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </nav>
+            <% end %>
+          </div>
+        <% end %>
+
+
+        <!-- TABLE -->
+        <div class="overflow-x-auto">
+          <table class="w-full border border-gray-300 text-sm">
+
+            <!-- HEADER -->
+            <thead class="bg-bnb_blue text-white">
+              <tr>
+                <th class="px-4 py-2 text-left">Invoice No</th>
+                <th class="px-4 py-2 text-left">Customer</th>
+                <th class="px-4 py-2 text-right">Subtotal</th>
+                <th class="px-4 py-2 text-right">Tax</th>
+                <th class="px-4 py-2 text-right">Grand Total</th>
+                <th class="px-4 py-2 text-center">Action</th>
+              </tr>
+            </thead>
+
+            <!-- BODY -->
+            <tbody>
+              <% @invoices.each do |invoice| %>
+                <tr class="border-t hover:bg-gray-50">
+                  <td class="px-4 py-2">
+                    <%= invoice.invoice_number %>
+                  </td>
+
+                  <td class="px-4 py-2">
+                    <%= invoice.customer.name.titleize %>
+                  </td>
+
+                  <td class="px-4 py-2 text-right">
+                    <%= number_to_currency(invoice.subtotal) %>
+                  </td>
+
+                  <td class="px-4 py-2 text-right">
+                    <%= number_to_currency(invoice.tax_total) %>
+                  </td>
+
+                  <td class="px-4 py-2 text-right font-semibold text-bnb_blue">
+                    <%= number_to_currency(invoice.grand_total) %>
+                  </td>
+
+                  <!-- ACTION -->
+                  <td class="px-4 py-2 text-center">
+                    <%= link_to invoice_path(invoice),
+                      class: "inline-flex items-center justify-center p-2 rounded-full text-bnb_blue hover:!bg-[rgb(37,45,96)] hover:!text-white",
+                      title: "View invoice" do %>
+                      <i class="material-symbols-outlined !text-[20px]">visibility</i>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+
+              <% if @invoices.empty? %>
+                <tr>
+                  <td colspan="6" class="px-4 py-6 text-center text-gray-500">
+                    No invoices found
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
