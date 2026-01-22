@@ -19,100 +19,106 @@
         </div>
 
         <div class="px-[16px] pt-[16px] mb-[16px]">
+          <section class="flex flex-row justify-between gap-6 mb-8 border-b pb-4">
+            <div>
+              <p><strong>Name:</strong> <%= @customer.name.titleize %></p>
+              <p><strong>Address:</strong> <%= @customer.address.titleize %></p>
+              <p><strong>Tax No:</strong> <%= @customer.tax_number %></p>
+            </div>
 
-        <section class="flex flex-row justify-between gap-6 mb-8 border-b pb-4">
-          <div>
-            <p><strong>Name:</strong> <%= @customer.name.titleize %></p>
-            <p><strong>Address:</strong> <%= @customer.address.titleize %></p>
-            <p><strong>Tax No:</strong> <%= @customer.tax_number %></p>
-          </div>
+            <!-- RIGHT: INVOICE DETAILS -->
+            <div class="text-right">
+              <p><strong>Invoice No:</strong> <%= @invoice.invoice_number %></p>
+              <p><strong>Issue Date:</strong> <%= @invoice.issue_date.strftime('%d %b %Y') if @invoice.issue_date %></p>
+            </div>
 
-          <!-- RIGHT: INVOICE DETAILS -->
-          <div class="text-right">
-            <p><strong>Invoice No:</strong> <%= @invoice.invoice_number %></p>
-            <p><strong>Issue Date:</strong> <%= @invoice.issue_date.strftime('%d %b %Y') if @invoice.issue_date %></p>
-          </div>
+          </section>
 
-        </section>
+          <section>
+            <h3 class="text-lg font-semibold text-bnb_blue mb-4">Transactions</h3>
 
-        <section>
-          <h3 class="text-lg font-semibold text-bnb_blue mb-4">Transactions</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full border border-gray-300 text-sm">
 
-          <div class="overflow-x-auto">
-            <table class="w-full border border-gray-300 text-sm">
-              
-              <!-- TABLE HEADER -->
-              <thead class="bg-bnb_blue text-white">
-                <tr>
-                  <th class="px-4 py-2 text-left">Reference</th>
-                  <th class="px-4 py-2 text-left">Date</th>
-                  <th class="px-4 py-2 text-right">Amount</th>
-                  <th class="px-4 py-2 text-right">Tax</th>
-                  <th class="px-4 py-2 text-right">Total</th>
-                  <th class="px-4 py-2 text-center">Action</th>
-                </tr>
-              </thead>
-
-              <!-- TABLE BODY -->
-              <tbody>
-                <% @transactions.each do |t| %>
-                  <tr class="border-t hover:bg-gray-50">
-                    <td class="px-4 py-2">
-                      <%= t.external_transaction_ref %>
-                    </td>
-
-                    <td class="px-4 py-2">
-                      <%= t.transaction_date %>
-                    </td>
-
-                    <td class="px-4 py-2 text-right">
-                      <%= number_to_currency(t.amount) %>
-                    </td>
-
-                    <td class="px-4 py-2 text-right">
-                      <%= number_to_currency(t.tax_amount) %>
-                    </td>
-
-                    <td class="px-4 py-2 text-right">
-                      <%= number_to_currency(t.amount) %>
-                    </td>
-
-                    <!-- ACTION COLUMN -->
-                    <td class="px-4 py-2 text-center">
-                      <%= link_to edit_transaction_path(t),
-                        class: "inline-flex items-center justify-center p-2 rounded-full text-bnb_blue hover:!bg-[rgb(37,45,96)] hover:!text-white",
-                        title: "Edit transaction" do %>
-                        <i class="material-symbols-outlined !text-[20px]">edit</i>
-                      <% end %>
-                    </td>
+                <!-- TABLE HEADER -->
+                <thead class="bg-bnb_blue text-white">
+                  <tr>
+                    <th class="px-4 py-2 text-left">Reference</th>
+                    <th class="px-4 py-2 text-left">Date</th>
+                    <th class="px-4 py-2 text-right">Amount</th>
+                    <th class="px-4 py-2 text-right">Tax</th>
+                    <th class="px-4 py-2 text-right">Total</th>
+                    <th class="px-4 py-2 text-center">Action</th>
                   </tr>
-                <% end %>
+                </thead>
 
-                <!-- TOTALS ROW -->
-                <tr class="border-t-2 font-semibold bg-gray-100">
-                  <td colspan="2" class="px-4 py-2 text-right">
-                    Totals
-                  </td>
+                <!-- TABLE BODY -->
+                <tbody>
+                  <% @transactions.each do |t| %>
+                    <tr class="border-t hover:bg-gray-50">
+                      <td class="px-4 py-2">
+                        <%= t.external_transaction_ref %>
+                      </td>
 
-                  <td class="px-4 py-2 text-right text-bnb_blue">
-                    <%= number_to_currency(@amount_total) %>
-                  </td>
+                      <td class="px-4 py-2">
+                        <%= t.transaction_date %>
+                      </td>
 
-                  <td class="px-4 py-2 text-right text-bnb_blue">
-                    <%= number_to_currency(@tax_total) %>
-                  </td>
+                      <td class="px-4 py-2 text-right">
+                        <%= number_to_currency(t.amount) %>
+                      </td>
 
-                  <td class="px-4 py-2 text-right text-bnb_blue">
-                    <%= number_to_currency(@grand_total) %>
-                  </td>
+                      <td class="px-4 py-2 text-right">
+                        <%= number_to_currency(t.tax_amount) %>
+                      </td>
 
-                  <!-- EMPTY ACTION COLUMN -->
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+                      <td class="px-4 py-2 text-right">
+                        <%= number_to_currency(t.amount) %>
+                      </td>
+
+                      <!-- ACTION COLUMN -->
+                      <td class="px-4 py-2 text-center">
+                        <%= link_to edit_transaction_path(t),
+                          class: "inline-flex items-center justify-center p-2 rounded-full text-bnb_blue hover:!bg-[rgb(37,45,96)] hover:!text-white",
+                          title: "Edit transaction" do %>
+                          <i class="material-symbols-outlined !text-[20px]">edit</i>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+
+                  <!-- TOTALS ROW -->
+                  <tr class="border-t-2 font-semibold bg-gray-100">
+                    <td colspan="2" class="px-4 py-2 text-right">
+                      Totals
+                    </td>
+
+                    <td class="px-4 py-2 text-right text-bnb_blue">
+                      <%= number_to_currency(@amount_total) %>
+                    </td>
+
+                    <td class="px-4 py-2 text-right text-bnb_blue">
+                      <%= number_to_currency(@tax_total) %>
+                    </td>
+
+                    <td class="px-4 py-2 text-right text-bnb_blue">
+                      <%= number_to_currency(@grand_total) %>
+                    </td>
+
+                    <!-- EMPTY ACTION COLUMN -->
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <div class="flex space-x-[16px] justify-end mt-[16px]">
+            <%= link_to download_pdf_invoice_path(@invoice),
+              class: "btn-blue-bnb flex items-center disabled:opacity-50 disabled:cursor-not-allowed" do %>
+              <i class="material-symbols-outlined !text-[20px] text-white mr-[8px] ml-[2px]">download</i>
+              Generate Invoice
+            <% end %>
           </div>
-        </section>
         </div>
       </div>
     </div>

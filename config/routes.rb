@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :invoices, only: [:create, :edit, :update, :show, :index, :new]
+  resources :invoices, only: [:create, :edit, :update, :show, :index, :new] do
+    member do
+      get :download_pdf
+    end
+  end
+
   resources :transactions, only: [:edit, :update]
   resources :customers, only: [:edit, :update]
 end

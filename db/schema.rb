@@ -35,8 +35,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_14_044653) do
     t.decimal "subtotal"
     t.decimal "tax_total"
     t.decimal "grand_total"
+    t.bigint "created_by_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["created_by_id"], name: "index_invoices_on_created_by_id"
     t.index ["customer_id"], name: "index_invoices_on_customer_id"
   end
 
@@ -72,6 +74,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_14_044653) do
   end
 
   add_foreign_key "invoices", "customers"
+  add_foreign_key "invoices", "users", column: "created_by_id"
   add_foreign_key "transactions", "customers"
   add_foreign_key "transactions", "invoices"
   add_foreign_key "users", "roles"

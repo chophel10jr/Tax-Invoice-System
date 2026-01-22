@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
-  before_action :require_login, only: [:new, :create]
-  before_action :set_invoice, only: [:show, :edit, :update]
+  before_action :authenticate_user!
+  before_action :set_invoice, only: [:show, :edit, :update, :download_pdf]
 
   def index
     @invoices = Invoice
@@ -33,14 +33,22 @@ class InvoicesController < ApplicationController
       transactions: params['transaction_reference_numbers']
     ).run
 
-    result = InvoiceCreationService.new(rows: rows).run
+    result = InvoiceCreationService.new(rows: rows, user: current_user).run
 
     flash[:notice] = "Invoice created successfully! Invoice number: #{result[:invoice_number]}"
     redirect_to invoice_path(id: result[:invoice_number])
 
   rescue StandardError => e
-    # Show friendly error message on screen
     redirect_to root_path, alert: "Invoice creation failed: #{e.message}"
+  end
+
+  def download_pdf
+    pdf = GeneratePdfService.new(invoice: @invoice).run
+
+    send_data pdf.render,
+              filename: "invoice_#{@invoice.invoice_number}.pdf",
+              type: "application/pdf",
+              disposition: "inline"
   end
 
   private
@@ -51,9 +59,5 @@ class InvoicesController < ApplicationController
 
   def invoice_params
     params.require(:invoice).permit(:issue_date, :status)
-  end
-
-  def require_login
-    redirect_to login_path unless session[:user_id]
   end
 end

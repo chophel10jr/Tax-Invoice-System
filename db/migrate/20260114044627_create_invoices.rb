@@ -9,6 +9,7 @@ class CreateInvoices < ActiveRecord::Migration[8.0]
       t.decimal :subtotal
       t.decimal :tax_total
       t.decimal :grand_total
+      t.references :created_by, null: false, foreign_key: { to_table: :users }
 
       t.timestamps
     end

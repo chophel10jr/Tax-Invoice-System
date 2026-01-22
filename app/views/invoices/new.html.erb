@@ -14,14 +14,20 @@
 
             <div id="invoice-container" data-invoice-target="container" data-stepper-target="invoiceContainer">
               <div class="flex justify-between items-center">
-                  <button data-action="click->invoice#addTransaction"
-                          data-invoice-target="addTransactionButton" 
-                          type="button"
-                          class="btn-blue-bnb-outline flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
-                          id="add-transaction">
-                    <i class="material-symbols-outlined !text-[20px] mr-[8px]">add</i>
-                    Add Transaction
-                  </button>
+                <%= link_to invoices_path,
+                    class: "inline-flex items-center px-3 py-2 rounded-lg text-bnb_blue hover:!bg-[rgb(37,45,96)] hover:!text-white transition-colors duration-200" do %>
+                  <i class="material-symbols-outlined mr-[6px]">arrow_back</i>
+                  Back to Invoices
+                <% end %>
+
+                <button data-action="click->invoice#addTransaction"
+                        data-invoice-target="addTransactionButton"
+                        type="button"
+                        class="btn-blue-bnb-outline flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                        id="add-transaction">
+                  <i class="material-symbols-outlined !text-[20px] mr-[8px]">add</i>
+                  Add Transaction
+                </button>
               </div>
 
               <div class="transaction-form border border-[rgba(0,0,0,0.1)] rounded-[8px] px-[16px] pt-[16px] my-[16px]">

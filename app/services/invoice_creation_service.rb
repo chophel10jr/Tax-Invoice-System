@@ -1,5 +1,5 @@
 class InvoiceCreationService < ApplicationService
-  attr_accessor :rows
+  attr_accessor :rows, :user
 
   def run
     validate_same_customer!
@@ -38,10 +38,12 @@ class InvoiceCreationService < ApplicationService
 
   def create_invoice(customer)
     unique_invoice_number = generate_invoice_number
+
     Invoice.create!(
       customer: customer,
       invoice_number: unique_invoice_number,
-      issue_date: Time.current
+      issue_date: Time.current,
+      created_by: user
     )
   end
 
