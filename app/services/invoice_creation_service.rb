@@ -60,6 +60,6 @@ class InvoiceCreationService < ApplicationService
   end
 
   def generate_invoice_number
-    "INV#{Time.current.strftime('%Y%m%d%H%M%S')}#{rand(1000..9999)}"
+    "BNB#{Time.current.strftime('%Y%m%d')}#{rand(1000..9999)}"
   end
 end

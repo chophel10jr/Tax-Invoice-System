@@ -15,4 +15,10 @@ class User < ApplicationRecord
   def inputer?
     role.name == 'inputer'
   end
+
+  def can_modify_transactions?(invoice)
+    return false if invoice.status == "issued"
+
+    admin? || invoice.created_by_id == id
+  end
 end

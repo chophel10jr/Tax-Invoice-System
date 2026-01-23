@@ -103,15 +103,15 @@
                   </td>
 
                   <td class="px-4 py-2 text-right">
-                    <%= number_to_currency(invoice.subtotal) %>
+                    <%= number_to_currency(invoice.subtotal, unit: "Nu ", precision: 2) %>
                   </td>
 
                   <td class="px-4 py-2 text-right">
-                    <%= number_to_currency(invoice.tax_total) %>
+                    <%= number_to_currency(invoice.tax_total, unit: "Nu ", precision: 2) %>
                   </td>
 
                   <td class="px-4 py-2 text-right font-semibold text-bnb_blue">
-                    <%= number_to_currency(invoice.grand_total) %>
+                    <%= number_to_currency(invoice.grand_total, unit: "Nu ", precision: 2) %>
                   </td>
 
                   <!-- ACTION -->

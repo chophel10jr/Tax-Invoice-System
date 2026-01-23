@@ -11,11 +11,19 @@ class Transaction < ApplicationRecord
 
   # Callbacks
   after_commit :update_invoice_totals, on: [:create, :update, :destroy]
+  before_update :prevent_update_if_invoice_issued
 
   private
 
   def update_invoice_totals
     invoice.recalculate_totals!
+  end
+
+  def prevent_update_if_invoice_issued
+    if invoice.status == "issued"
+      errors.add(:base, "Cannot modify transactions of an issued invoice")
+      throw :abort
+    end
   end
 end
 # currency, :integer, default: BTN, null: false

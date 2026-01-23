@@ -29,9 +29,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_14_044653) do
   create_table "invoices", force: :cascade do |t|
     t.string "invoice_number"
     t.bigint "customer_id", null: false
-    t.date "issue_date"
-    t.string "status"
-    t.string "currency"
+    t.date "issue_date", default: -> { "CURRENT_DATE" }
+    t.string "status", default: "draft"
+    t.string "currency", default: "BTN"
     t.decimal "subtotal"
     t.decimal "tax_total"
     t.decimal "grand_total"
@@ -55,7 +55,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_14_044653) do
     t.date "transaction_date"
     t.decimal "amount"
     t.decimal "tax_amount"
-    t.string "currency"
+    t.string "currency", default: "BTN"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_transactions_on_customer_id"

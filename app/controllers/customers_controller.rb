@@ -1,8 +1,9 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_customer, only: [:edit, :update]
+  before_action :set_customer
 
   def edit
+    @invoice_id = params[:invoice_id]
   end
 
   def update

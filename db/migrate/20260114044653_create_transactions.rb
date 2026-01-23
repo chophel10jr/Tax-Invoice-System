@@ -7,7 +7,8 @@ class CreateTransactions < ActiveRecord::Migration[8.0]
       t.date :transaction_date
       t.decimal :amount
       t.decimal :tax_amount
-      t.string :currency
+      t.string :currency, default: "BTN"
+      t.string :description
 
       t.timestamps
     end

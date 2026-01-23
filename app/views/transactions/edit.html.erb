@@ -12,7 +12,7 @@
 
         <div>
           <%= link_to invoice_path(@transaction.invoice),
-              class: "inline-flex items-center px-3 py-2 rounded-lg text-bnb_blue hover:!bg-[rgb(37,45,96)] hover:!text-white transition-colors duration-200" do %>
+              class: "btn-blue-bnb-plain" do %>
             <i class="material-symbols-outlined mr-[6px]">arrow_back</i>
             Back to Invoice
           <% end %>
@@ -21,42 +21,53 @@
         <div data-controller="transaction">
           <%= form_with model: @transaction, local: true do |f| %>
             <div class="transaction-form px-[16px] pt-[16px] mb-[16px]">
-              <div>
-                <p class="mb-[8px]">Transaction Reference Number</p>
-                <div class="form-group mb-[24px]">
-                  <p class="form-input readonly-field"><%= @transaction['external_transaction_ref'] || '-' %></p>
+              <div class="grid grid-cols-2 gap-x-[24px]">
+                <div>
+                  <p class="mb-[8px]">Transaction Reference Number</p>
+                  <div class="form-group mb-[24px]">
+                    <p class="form-input readonly-field"><%= @transaction['external_transaction_ref'] || '-' %></p>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <p class="mb-[8px]">Transaction Date</p>
-                <div class="form-group mb-[24px]">
-                  <p class="form-input readonly-field"><%= @transaction['transaction_date'] || '-' %></p>
+                <div>
+                  <p class="mb-[8px]">Transaction Date</p>
+                  <div class="form-group mb-[24px]">
+                    <p class="form-input readonly-field"><%= @transaction['transaction_date'] || '-' %></p>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <p class="mb-[8px]">Currency</p>
-                <div class="form-group mb-[24px]">
-                  <p class="form-input readonly-field"><%= @transaction['currency'] || '-' %></p>
+                <div>
+                  <p class="mb-[8px]">Currency</p>
+                  <div class="form-group mb-[24px]">
+                    <p class="form-input readonly-field"><%= @transaction['currency'] || '-' %></p>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <p class="mb-[8px]">Tax Amount</p>
-                <div class="form-group mb-[24px]">
-                  <p class="form-input readonly-field"><%= @transaction['tax_amount'] || '-' %></p>
+                <div>
+                  <p class="mb-[8px]">Tax Amount</p>
+                  <div class="form-group mb-[24px]">
+                    <p class="form-input readonly-field"><%= @transaction['tax_amount'] || '-' %></p>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <p class="mb-[8px]">Amount</p>
-                <div class="form-group mb-[24px]">
-                  <%= f.number_field :amount,
-                    { step: 0.01,
-                      class: "form-input",
-                      data: { transaction_target: "amount", action: "input->transaction#validateAmount" } } %>
-                  <span class="error-message" data-transaction-target="amountError" style="color: red;"></span>
+                <div>
+                  <p class="mb-[8px]">Amount</p>
+                  <div class="form-group mb-[24px]">
+                    <%= f.number_field :amount,
+                      { step: 0.01,
+                        class: "form-input",
+                        data: { transaction_target: "amount", action: "input->transaction#validateAmount" } } %>
+                    <span class="error-message" data-transaction-target="amountError" style="color: red;"></span>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="mb-[8px]">Description</p>
+                  <div class="form-group mb-[24px]">
+                    <%= f.text_field :description,
+                      { class: "form-input",
+                        data: { transaction_target: "description", action: "input->transaction#validateDescription" } } %>
+                  </div>
                 </div>
               </div>
             </div>

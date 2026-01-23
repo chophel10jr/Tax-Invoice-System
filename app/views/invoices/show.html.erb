@@ -12,26 +12,38 @@
 
         <div>
           <%= link_to invoices_path,
-              class: "inline-flex items-center px-3 py-2 rounded-lg text-bnb_blue hover:!bg-[rgb(37,45,96)] hover:!text-white transition-colors duration-200" do %>
+              class: "btn-blue-bnb-plain" do %>
             <i class="material-symbols-outlined mr-[6px]">arrow_back</i>
             Back to Invoices
           <% end %>
         </div>
 
-        <div class="px-[16px] pt-[16px] mb-[16px]">
-          <section class="flex flex-row justify-between gap-6 mb-8 border-b pb-4">
+        <div class="p-[16px]">
+          <section class="flex flex-row justify-between gap-6 mb-4 border-b pb-4">
             <div>
-              <p><strong>Name:</strong> <%= @customer.name.titleize %></p>
+              <p><strong>Invoice No:</strong> <%= @invoice.invoice_number %></p>
+            </div>
+            <div class="text-right">
+              <p><strong>Issue Date:</strong> <%= @invoice.issue_date.strftime('%d %b %Y') if @invoice.issue_date %></p>
+            </div>
+          </section>
+
+          <section class="flex flex-row justify-between gap-6 mb-4 border-b pb-4">
+            <div>
+              <p>
+                <strong>Name:</strong>
+                <%= @customer.name.titleize %><%= " (#{@customer.cid})" if @customer.cid.present? %>
+              </p>
               <p><strong>Address:</strong> <%= @customer.address.titleize %></p>
               <p><strong>Tax No:</strong> <%= @customer.tax_number %></p>
             </div>
-
-            <!-- RIGHT: INVOICE DETAILS -->
             <div class="text-right">
-              <p><strong>Invoice No:</strong> <%= @invoice.invoice_number %></p>
-              <p><strong>Issue Date:</strong> <%= @invoice.issue_date.strftime('%d %b %Y') if @invoice.issue_date %></p>
+              <%= link_to edit_customer_path(@customer.id, invoice_id: @invoice.id),
+                          class: "btn-blue-bnb-plain" do %>
+                <i class="material-symbols-outlined !text-[20px] mr-[6px]">edit</i>
+                Edit Customer
+              <% end %>
             </div>
-
           </section>
 
           <section>
@@ -65,15 +77,15 @@
                       </td>
 
                       <td class="px-4 py-2 text-right">
-                        <%= number_to_currency(t.amount) %>
+                        <%= number_to_currency(t.amount, unit: "Nu ", precision: 2) %>
                       </td>
 
                       <td class="px-4 py-2 text-right">
-                        <%= number_to_currency(t.tax_amount) %>
+                        <%= number_to_currency(t.tax_amount, unit: "Nu ", precision: 2) %>
                       </td>
 
                       <td class="px-4 py-2 text-right">
-                        <%= number_to_currency(t.amount) %>
+                        <%= number_to_currency((t.amount.to_f + t.tax_amount.to_f), unit: "Nu ", precision: 2) %>
                       </td>
 
                       <!-- ACTION COLUMN -->
@@ -94,15 +106,15 @@
                     </td>
 
                     <td class="px-4 py-2 text-right text-bnb_blue">
-                      <%= number_to_currency(@amount_total) %>
+                      <%= number_to_currency(@invoice.subtotal, unit: "Nu ", precision: 2) %>
                     </td>
 
                     <td class="px-4 py-2 text-right text-bnb_blue">
-                      <%= number_to_currency(@tax_total) %>
+                      <%= number_to_currency(@invoice.tax_total, unit: "Nu ", precision: 2) %>
                     </td>
 
                     <td class="px-4 py-2 text-right text-bnb_blue">
-                      <%= number_to_currency(@grand_total) %>
+                      <%= number_to_currency(@invoice.grand_total, unit: "Nu ", precision: 2) %>
                     </td>
 
                     <!-- EMPTY ACTION COLUMN -->
@@ -113,7 +125,7 @@
             </div>
           </section>
           <div class="flex space-x-[16px] justify-end mt-[16px]">
-            <%= link_to download_pdf_invoice_path(@invoice),
+            <%= link_to generate_pdf_invoice_path(@invoice),
               class: "btn-blue-bnb flex items-center disabled:opacity-50 disabled:cursor-not-allowed" do %>
               <i class="material-symbols-outlined !text-[20px] text-white mr-[8px] ml-[2px]">download</i>
               Generate Invoice
