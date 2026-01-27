@@ -1,0 +1,328 @@
+=== puma startup: 2026-01-26 09:55:19 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2026-01-26 09:55:25 +0000 ===
+- Goodbye!
+=== puma startup: 2026-01-26 09:55:57 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2026-01-26 09:55:59 +0000 ===
+- Goodbye!
+=== puma startup: 2026-01-26 10:06:46 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2026-01-26 10:06:49 +0000 ===
+- Goodbye!
+=== puma startup: 2026-01-26 10:16:56 +0000 ===
+[91002e14-a44d-4fcd-9963-8642e9371bde] Started GET "/" for 172.21.14.52 at 2026-01-26 10:18:16 +0000
+[91002e14-a44d-4fcd-9963-8642e9371bde] Processing by InvoicesController#index as HTML
+[91002e14-a44d-4fcd-9963-8642e9371bde] Redirected to https://tax-invoice.bnb.bt/login
+[91002e14-a44d-4fcd-9963-8642e9371bde] Filter chain halted as :authenticate_user! rendered or redirected
+[91002e14-a44d-4fcd-9963-8642e9371bde] Completed 302 Found in 37ms (ActiveRecord: 4.3ms (1 query, 0 cached) | GC: 0.3ms)
+[1226801f-cf05-4cd0-91d3-a1bd2b67b583] Started GET "/login" for 172.21.14.52 at 2026-01-26 10:18:16 +0000
+[1226801f-cf05-4cd0-91d3-a1bd2b67b583] Processing by SessionsController#new as HTML
+[1226801f-cf05-4cd0-91d3-a1bd2b67b583]   Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.1ms)
+[1226801f-cf05-4cd0-91d3-a1bd2b67b583] Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[a731821e-728e-4fe1-b300-e7fb946d712f] Started GET "/" for 172.30.18.110 at 2026-01-26 10:24:18 +0000
+[a731821e-728e-4fe1-b300-e7fb946d712f] Processing by InvoicesController#index as HTML
+[a731821e-728e-4fe1-b300-e7fb946d712f] Redirected to https://tax-invoice.bnb.bt/login
+[a731821e-728e-4fe1-b300-e7fb946d712f] Filter chain halted as :authenticate_user! rendered or redirected
+[a731821e-728e-4fe1-b300-e7fb946d712f] Completed 302 Found in 19ms (ActiveRecord: 19.2ms (1 query, 0 cached) | GC: 0.0ms)
+[791339c9-d740-413f-984e-e565e461f712] Started GET "/login" for 172.30.18.110 at 2026-01-26 10:24:18 +0000
+[791339c9-d740-413f-984e-e565e461f712] Processing by SessionsController#new as HTML
+[791339c9-d740-413f-984e-e565e461f712]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[791339c9-d740-413f-984e-e565e461f712] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[892bf2d4-d5c3-404c-8642-09720c398b15] Started POST "/login" for 172.30.18.110 at 2026-01-26 10:24:25 +0000
+[892bf2d4-d5c3-404c-8642-09720c398b15] Processing by SessionsController#create as TURBO_STREAM
+[892bf2d4-d5c3-404c-8642-09720c398b15]   Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Login"}
+[892bf2d4-d5c3-404c-8642-09720c398b15] Redirected to https://tax-invoice.bnb.bt/
+[892bf2d4-d5c3-404c-8642-09720c398b15] Completed 302 Found in 9ms (ActiveRecord: 3.6ms (1 query, 0 cached) | GC: 0.0ms)
+[2e0cc20b-1c46-4f8c-ba13-62ad63831727] Started GET "/" for 172.30.18.110 at 2026-01-26 10:24:25 +0000
+[2e0cc20b-1c46-4f8c-ba13-62ad63831727] Processing by InvoicesController#index as TURBO_STREAM
+[2e0cc20b-1c46-4f8c-ba13-62ad63831727]   Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+[2e0cc20b-1c46-4f8c-ba13-62ad63831727] Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 2.4ms (3 queries, 0 cached) | GC: 0.0ms)
+[b4fcaf78-2878-4cce-ab09-fe610e9bd7e2] Started GET "/invoices/new" for 172.30.18.110 at 2026-01-26 10:24:35 +0000
+[b4fcaf78-2878-4cce-ab09-fe610e9bd7e2] Processing by InvoicesController#new as HTML
+[b4fcaf78-2878-4cce-ab09-fe610e9bd7e2]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+[b4fcaf78-2878-4cce-ab09-fe610e9bd7e2] Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+[69ac42cb-a7f3-4917-a990-f5151e3a9db4] Started GET "/invoices" for 172.30.18.110 at 2026-01-26 10:24:39 +0000
+[69ac42cb-a7f3-4917-a990-f5151e3a9db4] Processing by InvoicesController#index as HTML
+[69ac42cb-a7f3-4917-a990-f5151e3a9db4]   Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+[69ac42cb-a7f3-4917-a990-f5151e3a9db4] Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+[bb3703a2-5c22-416e-be1f-a2674bd9a77e] Started GET "/invoices/new" for 172.30.18.110 at 2026-01-26 10:24:39 +0000
+[bb3703a2-5c22-416e-be1f-a2674bd9a77e] Processing by InvoicesController#new as HTML
+[bb3703a2-5c22-416e-be1f-a2674bd9a77e]   Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+[bb3703a2-5c22-416e-be1f-a2674bd9a77e] Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[a48db151-929e-4418-9fdc-162782db8972] Started DELETE "/logout" for 172.30.18.110 at 2026-01-26 10:24:42 +0000
+[a48db151-929e-4418-9fdc-162782db8972] Processing by SessionsController#destroy as TURBO_STREAM
+[a48db151-929e-4418-9fdc-162782db8972]   Parameters: {"authenticity_token" => "[FILTERED]"}
+[a48db151-929e-4418-9fdc-162782db8972] Redirected to https://tax-invoice.bnb.bt/login
+[a48db151-929e-4418-9fdc-162782db8972] Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[fbeb203e-d1df-4b75-9798-72c3f897980a] Started GET "/login" for 172.30.18.110 at 2026-01-26 10:24:42 +0000
+[fbeb203e-d1df-4b75-9798-72c3f897980a] Processing by SessionsController#new as TURBO_STREAM
+[fbeb203e-d1df-4b75-9798-72c3f897980a]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[fbeb203e-d1df-4b75-9798-72c3f897980a] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[fd736be6-c06a-446d-b505-6c3f797556fa] Started GET "/" for 172.30.11.146 at 2026-01-26 10:49:42 +0000
+[fd736be6-c06a-446d-b505-6c3f797556fa] Processing by InvoicesController#index as HTML
+[fd736be6-c06a-446d-b505-6c3f797556fa] Redirected to https://tax-invoice.bnb.bt/login
+[fd736be6-c06a-446d-b505-6c3f797556fa] Filter chain halted as :authenticate_user! rendered or redirected
+[fd736be6-c06a-446d-b505-6c3f797556fa] Completed 302 Found in 30ms (ActiveRecord: 23.7ms (1 query, 0 cached) | GC: 7.9ms)
+[fc3d1d09-e695-4002-8b09-7057dfe8cf47] Started GET "/login" for 172.30.11.146 at 2026-01-26 10:49:42 +0000
+[fc3d1d09-e695-4002-8b09-7057dfe8cf47] Processing by SessionsController#new as HTML
+[fc3d1d09-e695-4002-8b09-7057dfe8cf47]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[fc3d1d09-e695-4002-8b09-7057dfe8cf47] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[83edf916-5a9f-41e7-8602-724d086b51a1] Started POST "/login" for 172.30.11.146 at 2026-01-26 10:50:44 +0000
+[83edf916-5a9f-41e7-8602-724d086b51a1] Processing by SessionsController#create as TURBO_STREAM
+[83edf916-5a9f-41e7-8602-724d086b51a1]   Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Login"}
+[83edf916-5a9f-41e7-8602-724d086b51a1] Redirected to https://tax-invoice.bnb.bt/
+[83edf916-5a9f-41e7-8602-724d086b51a1] Completed 302 Found in 3ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+[d615ffc5-55de-4a87-bcfd-c30589e90991] Started GET "/" for 172.30.11.146 at 2026-01-26 10:50:44 +0000
+[d615ffc5-55de-4a87-bcfd-c30589e90991] Processing by InvoicesController#index as TURBO_STREAM
+[d615ffc5-55de-4a87-bcfd-c30589e90991]   Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+[d615ffc5-55de-4a87-bcfd-c30589e90991] Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.0ms)
+[8f9c27e1-f0f8-4cd6-843c-bf4960d391a6] Started GET "/invoices/new" for 172.30.11.146 at 2026-01-26 10:50:56 +0000
+[8f9c27e1-f0f8-4cd6-843c-bf4960d391a6] Processing by InvoicesController#new as HTML
+[8f9c27e1-f0f8-4cd6-843c-bf4960d391a6]   Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+[8f9c27e1-f0f8-4cd6-843c-bf4960d391a6] Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+[2930eef0-ebcc-4d5d-979d-765e0ffb7df7] Started GET "/invoices" for 172.30.11.146 at 2026-01-26 10:50:59 +0000
+[2930eef0-ebcc-4d5d-979d-765e0ffb7df7] Processing by InvoicesController#index as HTML
+[2930eef0-ebcc-4d5d-979d-765e0ffb7df7]   Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.2ms)
+[2930eef0-ebcc-4d5d-979d-765e0ffb7df7] Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.2ms)
+[ae7d2a23-9c43-44d3-bd54-7589de8dd95d] Started POST "/invoices" for 172.30.11.146 at 2026-01-26 10:52:20 +0000
+[ae7d2a23-9c43-44d3-bd54-7589de8dd95d] Processing by InvoicesController#create as TURBO_STREAM
+[ae7d2a23-9c43-44d3-bd54-7589de8dd95d]   Parameters: {"authenticity_token" => "[FILTERED]", "transaction_reference_numbers" => ["9995600260220001"]}
+[ae7d2a23-9c43-44d3-bd54-7589de8dd95d] Oracle connection failed: ORA-12170: Cannot connect. TCP connect timeout of 20s for host 172.17.10.181 port 1521. (CONNECTION_ID=SUlNFcoabvvgYwEBAH/6qg==)
+Help: https://docs.oracle.com/error-help/db/ora-12170/
+[ae7d2a23-9c43-44d3-bd54-7589de8dd95d] Redirected to https://tax-invoice.bnb.bt/
+[ae7d2a23-9c43-44d3-bd54-7589de8dd95d] Completed 302 Found in 20182ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+[bf40e9d9-fca7-418c-bdaa-f420f330b7a0] Started GET "/" for 172.30.11.146 at 2026-01-26 10:52:40 +0000
+[bf40e9d9-fca7-418c-bdaa-f420f330b7a0] Processing by InvoicesController#index as TURBO_STREAM
+[bf40e9d9-fca7-418c-bdaa-f420f330b7a0]   Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+[bf40e9d9-fca7-418c-bdaa-f420f330b7a0] Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+[53381f1a-6c82-4845-99de-aa2037af87d1] Started DELETE "/logout" for 172.30.11.146 at 2026-01-26 10:57:03 +0000
+[53381f1a-6c82-4845-99de-aa2037af87d1] Processing by SessionsController#destroy as TURBO_STREAM
+[53381f1a-6c82-4845-99de-aa2037af87d1]   Parameters: {"authenticity_token" => "[FILTERED]"}
+[53381f1a-6c82-4845-99de-aa2037af87d1] Redirected to https://tax-invoice.bnb.bt/login
+[53381f1a-6c82-4845-99de-aa2037af87d1] Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[ae0b5188-e5b0-4121-9610-e548c8ff386f] Started GET "/login" for 172.30.11.146 at 2026-01-26 10:57:03 +0000
+[ae0b5188-e5b0-4121-9610-e548c8ff386f] Processing by SessionsController#new as TURBO_STREAM
+[ae0b5188-e5b0-4121-9610-e548c8ff386f]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[ae0b5188-e5b0-4121-9610-e548c8ff386f] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[fbb50b29-a447-43ba-8543-eb55c1a2e242] Started POST "/login" for 172.30.11.146 at 2026-01-26 10:57:33 +0000
+[fbb50b29-a447-43ba-8543-eb55c1a2e242] Processing by SessionsController#create as TURBO_STREAM
+[fbb50b29-a447-43ba-8543-eb55c1a2e242]   Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Login"}
+[fbb50b29-a447-43ba-8543-eb55c1a2e242] Redirected to https://tax-invoice.bnb.bt/
+[fbb50b29-a447-43ba-8543-eb55c1a2e242] Completed 302 Found in 2ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+[49b58f86-33c0-4ba4-9f7d-705f9008a49c] Started GET "/" for 172.30.11.146 at 2026-01-26 10:57:33 +0000
+[49b58f86-33c0-4ba4-9f7d-705f9008a49c] Processing by InvoicesController#index as TURBO_STREAM
+[49b58f86-33c0-4ba4-9f7d-705f9008a49c]   Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+[49b58f86-33c0-4ba4-9f7d-705f9008a49c] Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+[8f7ddc0d-4243-4722-92e6-2d3d5829b7d2] Started GET "/invoices/new" for 172.30.11.146 at 2026-01-26 10:57:50 +0000
+[8f7ddc0d-4243-4722-92e6-2d3d5829b7d2] Processing by InvoicesController#new as HTML
+[8f7ddc0d-4243-4722-92e6-2d3d5829b7d2]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[8f7ddc0d-4243-4722-92e6-2d3d5829b7d2] Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+[ed3f3cc2-e234-4959-960b-87da580dfa2a] Started GET "/invoices" for 172.30.11.146 at 2026-01-26 10:57:51 +0000
+[ed3f3cc2-e234-4959-960b-87da580dfa2a] Processing by InvoicesController#index as HTML
+[ed3f3cc2-e234-4959-960b-87da580dfa2a]   Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+[ed3f3cc2-e234-4959-960b-87da580dfa2a] Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+[190fb304-2b57-479d-8d0f-02bd49528c8f] Started POST "/invoices" for 172.30.11.146 at 2026-01-26 11:04:26 +0000
+[190fb304-2b57-479d-8d0f-02bd49528c8f] Processing by InvoicesController#create as TURBO_STREAM
+[190fb304-2b57-479d-8d0f-02bd49528c8f]   Parameters: {"authenticity_token" => "[FILTERED]", "transaction_reference_numbers" => ["9995600260220001"]}
+[190fb304-2b57-479d-8d0f-02bd49528c8f] Oracle connection failed: ORA-12170: Cannot connect. TCP connect timeout of 20s for host 172.17.10.181 port 1521. (CONNECTION_ID=SUlNFcobbvvgYwEBAH/6qg==)
+Help: https://docs.oracle.com/error-help/db/ora-12170/
+[190fb304-2b57-479d-8d0f-02bd49528c8f] Redirected to https://tax-invoice.bnb.bt/
+[190fb304-2b57-479d-8d0f-02bd49528c8f] Completed 302 Found in 20025ms (ActiveRecord: 18.8ms (1 query, 0 cached) | GC: 0.0ms)
+[5a88ed11-be6f-43cc-b84e-ed4446093edc] Started GET "/" for 172.30.11.146 at 2026-01-26 11:04:46 +0000
+[5a88ed11-be6f-43cc-b84e-ed4446093edc] Processing by InvoicesController#index as TURBO_STREAM
+[5a88ed11-be6f-43cc-b84e-ed4446093edc]   Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+[5a88ed11-be6f-43cc-b84e-ed4446093edc] Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 1.4ms (3 queries, 0 cached) | GC: 0.0ms)
+[c54fc0c8-6031-4968-8826-824365658450] Started GET "/invoices/new" for 172.30.11.146 at 2026-01-26 11:05:37 +0000
+[c54fc0c8-6031-4968-8826-824365658450] Processing by InvoicesController#new as HTML
+[c54fc0c8-6031-4968-8826-824365658450]   Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+[c54fc0c8-6031-4968-8826-824365658450] Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+[d4daf155-60a9-4ab0-9dcc-0a2ab280cc18] Started POST "/invoices" for 172.30.11.146 at 2026-01-26 11:05:51 +0000
+[d4daf155-60a9-4ab0-9dcc-0a2ab280cc18] Processing by InvoicesController#create as TURBO_STREAM
+[d4daf155-60a9-4ab0-9dcc-0a2ab280cc18]   Parameters: {"authenticity_token" => "[FILTERED]", "transaction_reference_numbers" => ["9995600260220001"]}
+[d4daf155-60a9-4ab0-9dcc-0a2ab280cc18] Oracle connection failed: ORA-12170: Cannot connect. TCP connect timeout of 20s for host 172.17.10.181 port 1521. (CONNECTION_ID=SUlNFcocbvvgYwEBAH/6qg==)
+Help: https://docs.oracle.com/error-help/db/ora-12170/
+[d4daf155-60a9-4ab0-9dcc-0a2ab280cc18] Redirected to https://tax-invoice.bnb.bt/
+[d4daf155-60a9-4ab0-9dcc-0a2ab280cc18] Completed 302 Found in 20029ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[383c5362-1075-4149-97aa-545e888ed0c6] Started GET "/" for 172.30.11.146 at 2026-01-26 11:06:11 +0000
+[383c5362-1075-4149-97aa-545e888ed0c6] Processing by InvoicesController#index as TURBO_STREAM
+[383c5362-1075-4149-97aa-545e888ed0c6]   Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+[383c5362-1075-4149-97aa-545e888ed0c6] Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+[902be1a4-68f7-4417-a038-ede5e7f5ddac] Started GET "/" for 172.30.11.146 at 2026-01-26 11:09:41 +0000
+[902be1a4-68f7-4417-a038-ede5e7f5ddac] Processing by InvoicesController#index as HTML
+[902be1a4-68f7-4417-a038-ede5e7f5ddac]   Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+[902be1a4-68f7-4417-a038-ede5e7f5ddac] Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.0ms)
+[cfe2e81a-cc9e-40fe-b63c-27aad9d511ae] Started GET "/invoices/new" for 172.30.11.146 at 2026-01-26 11:09:42 +0000
+[cfe2e81a-cc9e-40fe-b63c-27aad9d511ae] Processing by InvoicesController#new as HTML
+[cfe2e81a-cc9e-40fe-b63c-27aad9d511ae]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.2ms)
+[cfe2e81a-cc9e-40fe-b63c-27aad9d511ae] Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+[b8e971d6-1f20-40ef-af5a-87fed4f71069] Started GET "/invoices" for 172.30.11.146 at 2026-01-26 11:09:43 +0000
+[b8e971d6-1f20-40ef-af5a-87fed4f71069] Processing by InvoicesController#index as HTML
+[b8e971d6-1f20-40ef-af5a-87fed4f71069]   Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.6ms)
+[b8e971d6-1f20-40ef-af5a-87fed4f71069] Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 2.4ms)
+[12ccfb5c-9bfb-4739-8b92-7c03c9d5ad03] Started POST "/invoices" for 172.30.11.146 at 2026-01-26 11:09:48 +0000
+[12ccfb5c-9bfb-4739-8b92-7c03c9d5ad03] Processing by InvoicesController#create as TURBO_STREAM
+[12ccfb5c-9bfb-4739-8b92-7c03c9d5ad03]   Parameters: {"authenticity_token" => "[FILTERED]", "transaction_reference_numbers" => ["9995600260220001"]}
+[12ccfb5c-9bfb-4739-8b92-7c03c9d5ad03] Oracle database connection established
+[12ccfb5c-9bfb-4739-8b92-7c03c9d5ad03] Redirected to https://tax-invoice.bnb.bt/
+[12ccfb5c-9bfb-4739-8b92-7c03c9d5ad03] Completed 302 Found in 3125ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 1.5ms)
+[df7c2c56-c046-49f7-ab66-8a0f6a5163ed] Started GET "/" for 172.30.11.146 at 2026-01-26 11:09:51 +0000
+[df7c2c56-c046-49f7-ab66-8a0f6a5163ed] Processing by InvoicesController#index as TURBO_STREAM
+[df7c2c56-c046-49f7-ab66-8a0f6a5163ed]   Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 1.3ms)
+[df7c2c56-c046-49f7-ab66-8a0f6a5163ed] Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 1.7ms)
+[6be3efdf-792f-4d28-bc51-361cf44dd6b4] Started GET "/invoices/new" for 172.30.11.146 at 2026-01-26 11:09:58 +0000
+[6be3efdf-792f-4d28-bc51-361cf44dd6b4] Processing by InvoicesController#new as HTML
+[6be3efdf-792f-4d28-bc51-361cf44dd6b4]   Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.8ms)
+[6be3efdf-792f-4d28-bc51-361cf44dd6b4] Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 2.2ms)
+[91847316-3e61-43ff-ae79-222bdf2c2229] Started GET "/invoices" for 172.30.11.146 at 2026-01-26 11:10:00 +0000
+[91847316-3e61-43ff-ae79-222bdf2c2229] Processing by InvoicesController#index as HTML
+[91847316-3e61-43ff-ae79-222bdf2c2229]   Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 1.2ms)
+[91847316-3e61-43ff-ae79-222bdf2c2229] Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 2.6ms)
+[74c5b6e6-ea39-4a89-866a-739f7901835a] Started POST "/invoices" for 172.30.11.146 at 2026-01-26 11:10:40 +0000
+[74c5b6e6-ea39-4a89-866a-739f7901835a] Processing by InvoicesController#create as TURBO_STREAM
+[74c5b6e6-ea39-4a89-866a-739f7901835a]   Parameters: {"authenticity_token" => "[FILTERED]", "transaction_reference_numbers" => ["2601401444244000", "000ZEXA26014000F"]}
+[74c5b6e6-ea39-4a89-866a-739f7901835a] Oracle database connection established
+[74c5b6e6-ea39-4a89-866a-739f7901835a] Redirected to https://tax-invoice.bnb.bt/invoices/1
+[74c5b6e6-ea39-4a89-866a-739f7901835a] Completed 302 Found in 329ms (ActiveRecord: 13.8ms (17 queries, 0 cached) | GC: 34.1ms)
+[b5dd7cd8-2ee0-4a44-ad14-eecc10be1143] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:10:40 +0000
+[b5dd7cd8-2ee0-4a44-ad14-eecc10be1143] Processing by InvoicesController#show as TURBO_STREAM
+[b5dd7cd8-2ee0-4a44-ad14-eecc10be1143]   Parameters: {"id" => "1"}
+[b5dd7cd8-2ee0-4a44-ad14-eecc10be1143]   Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.9ms)
+[b5dd7cd8-2ee0-4a44-ad14-eecc10be1143] Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.9ms)
+[d76e1bda-5c51-4f3e-99a4-dc7fc387c393] Started GET "/customers/1/edit?invoice_id=1" for 172.30.11.146 at 2026-01-26 11:10:58 +0000
+[d76e1bda-5c51-4f3e-99a4-dc7fc387c393] Processing by CustomersController#edit as HTML
+[d76e1bda-5c51-4f3e-99a4-dc7fc387c393]   Parameters: {"invoice_id" => "1", "id" => "1"}
+[d76e1bda-5c51-4f3e-99a4-dc7fc387c393]   Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.5ms)
+[d76e1bda-5c51-4f3e-99a4-dc7fc387c393] Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.5ms)
+[c8a57f6f-57e0-4d84-b8c2-6960e5743948] Started GET "/customers/1/edit?invoice_id=1" for 172.30.11.146 at 2026-01-26 11:11:00 +0000
+[c8a57f6f-57e0-4d84-b8c2-6960e5743948] Processing by CustomersController#edit as HTML
+[c8a57f6f-57e0-4d84-b8c2-6960e5743948]   Parameters: {"invoice_id" => "1", "id" => "1"}
+[c8a57f6f-57e0-4d84-b8c2-6960e5743948]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[c8a57f6f-57e0-4d84-b8c2-6960e5743948] Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+[4b374da5-6aa4-4ed9-af32-f1a678287a31] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:11:14 +0000
+[4b374da5-6aa4-4ed9-af32-f1a678287a31] Processing by InvoicesController#show as HTML
+[4b374da5-6aa4-4ed9-af32-f1a678287a31]   Parameters: {"id" => "1"}
+[4b374da5-6aa4-4ed9-af32-f1a678287a31]   Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.4ms)
+[4b374da5-6aa4-4ed9-af32-f1a678287a31] Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.4ms)
+[de11f40b-85be-4533-8beb-8dec4a20d47f] Started GET "/invoices" for 172.30.11.146 at 2026-01-26 11:11:15 +0000
+[de11f40b-85be-4533-8beb-8dec4a20d47f] Processing by InvoicesController#index as HTML
+[de11f40b-85be-4533-8beb-8dec4a20d47f]   Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+[de11f40b-85be-4533-8beb-8dec4a20d47f] Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.0ms)
+[f7ffe237-25d3-470d-aaf2-941da36e932f] Started GET "/transactions/1/edit" for 172.30.11.146 at 2026-01-26 11:11:19 +0000
+[f7ffe237-25d3-470d-aaf2-941da36e932f] Processing by TransactionsController#edit as HTML
+[f7ffe237-25d3-470d-aaf2-941da36e932f]   Parameters: {"id" => "1"}
+[f7ffe237-25d3-470d-aaf2-941da36e932f]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+[f7ffe237-25d3-470d-aaf2-941da36e932f] Completed 200 OK in 11ms (Views: 2.7ms | ActiveRecord: 2.7ms (4 queries, 0 cached) | GC: 0.4ms)
+[e26ee2eb-35d1-4a81-a978-319362efb080] Started GET "/transactions/1/edit" for 172.30.11.146 at 2026-01-26 11:11:25 +0000
+[e26ee2eb-35d1-4a81-a978-319362efb080] Processing by TransactionsController#edit as HTML
+[e26ee2eb-35d1-4a81-a978-319362efb080]   Parameters: {"id" => "1"}
+[e26ee2eb-35d1-4a81-a978-319362efb080]   Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.4ms)
+[e26ee2eb-35d1-4a81-a978-319362efb080] Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.4ms)
+[43d49ba6-8e6a-4fd2-97af-cc9d68fb57d5] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:11:38 +0000
+[43d49ba6-8e6a-4fd2-97af-cc9d68fb57d5] Processing by InvoicesController#show as HTML
+[43d49ba6-8e6a-4fd2-97af-cc9d68fb57d5]   Parameters: {"id" => "1"}
+[43d49ba6-8e6a-4fd2-97af-cc9d68fb57d5]   Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+[43d49ba6-8e6a-4fd2-97af-cc9d68fb57d5] Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 0.0ms)
+[5c859db0-2fa1-4ef1-be3b-040b4b9107d5] Started GET "/invoices" for 172.30.11.146 at 2026-01-26 11:11:39 +0000
+[5c859db0-2fa1-4ef1-be3b-040b4b9107d5] Processing by InvoicesController#index as HTML
+[5c859db0-2fa1-4ef1-be3b-040b4b9107d5]   Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+[5c859db0-2fa1-4ef1-be3b-040b4b9107d5] Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.1ms)
+[40eacf44-73a9-404d-8cf3-12b4a9b1e766] Started GET "/invoices/1/generate_pdf" for 172.30.11.146 at 2026-01-26 11:11:41 +0000
+[40eacf44-73a9-404d-8cf3-12b4a9b1e766] Processing by InvoicesController#generate_pdf as HTML
+[40eacf44-73a9-404d-8cf3-12b4a9b1e766]   Parameters: {"id" => "1"}
+[40eacf44-73a9-404d-8cf3-12b4a9b1e766] Sent data invoice_BNB202601266191.pdf (0.6ms)
+[40eacf44-73a9-404d-8cf3-12b4a9b1e766] Completed 200 OK in 417ms (Views: 0.3ms | ActiveRecord: 4.2ms (7 queries, 0 cached) | GC: 98.4ms)
+[67a0e4d9-0ea8-4cbf-af7a-c25eb4781476] Started GET "/transactions/1/edit" for 172.30.11.146 at 2026-01-26 11:11:47 +0000
+[67a0e4d9-0ea8-4cbf-af7a-c25eb4781476] Processing by TransactionsController#edit as HTML
+[67a0e4d9-0ea8-4cbf-af7a-c25eb4781476]   Parameters: {"id" => "1"}
+[67a0e4d9-0ea8-4cbf-af7a-c25eb4781476] Redirected to https://tax-invoice.bnb.bt/invoices/1
+[67a0e4d9-0ea8-4cbf-af7a-c25eb4781476] Filter chain halted as :authorize_transaction_modification! rendered or redirected
+[67a0e4d9-0ea8-4cbf-af7a-c25eb4781476] Completed 302 Found in 3ms (ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+[8c4b5840-dabb-4a58-b2e3-8a03f1d8ce96] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:11:47 +0000
+[8c4b5840-dabb-4a58-b2e3-8a03f1d8ce96] Processing by InvoicesController#show as HTML
+[8c4b5840-dabb-4a58-b2e3-8a03f1d8ce96]   Parameters: {"id" => "1"}
+[8c4b5840-dabb-4a58-b2e3-8a03f1d8ce96]   Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+[8c4b5840-dabb-4a58-b2e3-8a03f1d8ce96] Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.0ms)
+[f86e3356-8824-4a69-b224-2d8226f9d2e8] Started GET "/transactions/2/edit" for 172.30.11.146 at 2026-01-26 11:11:48 +0000
+[f86e3356-8824-4a69-b224-2d8226f9d2e8] Processing by TransactionsController#edit as HTML
+[f86e3356-8824-4a69-b224-2d8226f9d2e8]   Parameters: {"id" => "2"}
+[f86e3356-8824-4a69-b224-2d8226f9d2e8] Redirected to https://tax-invoice.bnb.bt/invoices/1
+[f86e3356-8824-4a69-b224-2d8226f9d2e8] Filter chain halted as :authorize_transaction_modification! rendered or redirected
+[f86e3356-8824-4a69-b224-2d8226f9d2e8] Completed 302 Found in 3ms (ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+[942ba73a-07df-4c1f-a7c7-085ddf46692a] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:11:48 +0000
+[942ba73a-07df-4c1f-a7c7-085ddf46692a] Processing by InvoicesController#show as HTML
+[942ba73a-07df-4c1f-a7c7-085ddf46692a]   Parameters: {"id" => "1"}
+[942ba73a-07df-4c1f-a7c7-085ddf46692a]   Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 3.9ms)
+[942ba73a-07df-4c1f-a7c7-085ddf46692a] Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 3.9ms)
+[420cb6b1-ada1-4a95-a4fb-2b78e7d22211] Started GET "/invoices/1/generate_pdf" for 172.30.11.146 at 2026-01-26 11:11:49 +0000
+[420cb6b1-ada1-4a95-a4fb-2b78e7d22211] Processing by InvoicesController#generate_pdf as HTML
+[420cb6b1-ada1-4a95-a4fb-2b78e7d22211]   Parameters: {"id" => "1"}
+[420cb6b1-ada1-4a95-a4fb-2b78e7d22211] Sent data invoice_BNB202601266191.pdf (0.4ms)
+[420cb6b1-ada1-4a95-a4fb-2b78e7d22211] Completed 200 OK in 442ms (Views: 0.3ms | ActiveRecord: 2.3ms (6 queries, 0 cached) | GC: 132.2ms)
+[ab476fea-1538-4a87-b3c6-f649b546e1b1] Started GET "/invoices/1/generate_pdf" for 172.30.11.146 at 2026-01-26 11:11:51 +0000
+[ab476fea-1538-4a87-b3c6-f649b546e1b1] Processing by InvoicesController#generate_pdf as HTML
+[ab476fea-1538-4a87-b3c6-f649b546e1b1]   Parameters: {"id" => "1"}
+[ab476fea-1538-4a87-b3c6-f649b546e1b1] Sent data invoice_BNB202601266191.pdf (0.4ms)
+[ab476fea-1538-4a87-b3c6-f649b546e1b1] Completed 200 OK in 448ms (Views: 0.3ms | ActiveRecord: 2.2ms (6 queries, 0 cached) | GC: 132.2ms)
+[4ae21ffe-e0d6-4d8c-9b81-8b4b11b5fe99] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:13:17 +0000
+[4ae21ffe-e0d6-4d8c-9b81-8b4b11b5fe99] Processing by InvoicesController#show as HTML
+[4ae21ffe-e0d6-4d8c-9b81-8b4b11b5fe99]   Parameters: {"id" => "1"}
+[4ae21ffe-e0d6-4d8c-9b81-8b4b11b5fe99]   Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+[4ae21ffe-e0d6-4d8c-9b81-8b4b11b5fe99] Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.0ms)
+[3dba4a87-c21c-4aa4-916e-d5b8c4c59a28] Started GET "/transactions/1/edit" for 172.30.11.146 at 2026-01-26 11:13:18 +0000
+[3dba4a87-c21c-4aa4-916e-d5b8c4c59a28] Processing by TransactionsController#edit as HTML
+[3dba4a87-c21c-4aa4-916e-d5b8c4c59a28]   Parameters: {"id" => "1"}
+[3dba4a87-c21c-4aa4-916e-d5b8c4c59a28] Redirected to https://tax-invoice.bnb.bt/invoices/1
+[3dba4a87-c21c-4aa4-916e-d5b8c4c59a28] Filter chain halted as :authorize_transaction_modification! rendered or redirected
+[3dba4a87-c21c-4aa4-916e-d5b8c4c59a28] Completed 302 Found in 3ms (ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+[c0112986-1315-4bb7-b437-cd86a3d83445] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:13:18 +0000
+[c0112986-1315-4bb7-b437-cd86a3d83445] Processing by InvoicesController#show as HTML
+[c0112986-1315-4bb7-b437-cd86a3d83445]   Parameters: {"id" => "1"}
+[c0112986-1315-4bb7-b437-cd86a3d83445]   Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+[c0112986-1315-4bb7-b437-cd86a3d83445] Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.0ms)
+[1f9739a9-a3d0-47ab-91a9-7defc9536d53] Started GET "/customers/1/edit?invoice_id=1" for 172.30.11.146 at 2026-01-26 11:13:29 +0000
+[1f9739a9-a3d0-47ab-91a9-7defc9536d53] Processing by CustomersController#edit as HTML
+[1f9739a9-a3d0-47ab-91a9-7defc9536d53]   Parameters: {"invoice_id" => "1", "id" => "1"}
+[1f9739a9-a3d0-47ab-91a9-7defc9536d53]   Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+[1f9739a9-a3d0-47ab-91a9-7defc9536d53] Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+[b1240ffa-fad1-40cc-97a3-bc06cffeb3b5] Started GET "/customers/1/edit?invoice_id=1" for 172.30.11.146 at 2026-01-26 11:13:50 +0000
+[b1240ffa-fad1-40cc-97a3-bc06cffeb3b5] Processing by CustomersController#edit as HTML
+[b1240ffa-fad1-40cc-97a3-bc06cffeb3b5]   Parameters: {"invoice_id" => "1", "id" => "1"}
+[b1240ffa-fad1-40cc-97a3-bc06cffeb3b5]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[b1240ffa-fad1-40cc-97a3-bc06cffeb3b5] Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+[0f060553-3f1d-4ba3-a8a0-bc4a6734425e] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:14:06 +0000
+[0f060553-3f1d-4ba3-a8a0-bc4a6734425e] Processing by InvoicesController#show as HTML
+[0f060553-3f1d-4ba3-a8a0-bc4a6734425e]   Parameters: {"id" => "1"}
+[0f060553-3f1d-4ba3-a8a0-bc4a6734425e]   Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+[0f060553-3f1d-4ba3-a8a0-bc4a6734425e] Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 3.1ms)
+[f84f3542-84e8-4ed4-ab85-a24f42c3269f] Started GET "/invoices" for 172.30.11.146 at 2026-01-26 11:14:06 +0000
+[f84f3542-84e8-4ed4-ab85-a24f42c3269f] Processing by InvoicesController#index as HTML
+[f84f3542-84e8-4ed4-ab85-a24f42c3269f]   Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+[f84f3542-84e8-4ed4-ab85-a24f42c3269f] Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.5ms)
+[5c7e5fb4-034a-4a5a-bf19-ebe3bae379f3] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:14:58 +0000
+[5c7e5fb4-034a-4a5a-bf19-ebe3bae379f3] Processing by InvoicesController#show as HTML
+[5c7e5fb4-034a-4a5a-bf19-ebe3bae379f3]   Parameters: {"id" => "1"}
+[5c7e5fb4-034a-4a5a-bf19-ebe3bae379f3]   Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+[5c7e5fb4-034a-4a5a-bf19-ebe3bae379f3] Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.7ms)
+[d216ff64-79cf-41c4-a958-579c98e68ebc] Started GET "/customers/1/edit?invoice_id=1" for 172.30.11.146 at 2026-01-26 11:14:59 +0000
+[d216ff64-79cf-41c4-a958-579c98e68ebc] Processing by CustomersController#edit as HTML
+[d216ff64-79cf-41c4-a958-579c98e68ebc]   Parameters: {"invoice_id" => "1", "id" => "1"}
+[d216ff64-79cf-41c4-a958-579c98e68ebc]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[d216ff64-79cf-41c4-a958-579c98e68ebc] Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+[26050534-3fdd-4d7d-8519-45f35e76d856] Started GET "/invoices/1/generate_pdf" for 172.30.11.146 at 2026-01-26 11:15:01 +0000
+[26050534-3fdd-4d7d-8519-45f35e76d856] Processing by InvoicesController#generate_pdf as HTML
+[26050534-3fdd-4d7d-8519-45f35e76d856]   Parameters: {"id" => "1"}
+[26050534-3fdd-4d7d-8519-45f35e76d856] Sent data invoice_BNB202601266191.pdf (0.4ms)
+[26050534-3fdd-4d7d-8519-45f35e76d856] Completed 200 OK in 492ms (Views: 0.3ms | ActiveRecord: 2.5ms (6 queries, 0 cached) | GC: 140.1ms)
+[f618f78a-3041-4f08-9891-15472b299403] Started GET "/transactions/1/edit" for 172.30.11.146 at 2026-01-26 11:15:02 +0000
+[f618f78a-3041-4f08-9891-15472b299403] Processing by TransactionsController#edit as HTML
+[f618f78a-3041-4f08-9891-15472b299403]   Parameters: {"id" => "1"}
+[f618f78a-3041-4f08-9891-15472b299403] Redirected to https://tax-invoice.bnb.bt/invoices/1
+[f618f78a-3041-4f08-9891-15472b299403] Filter chain halted as :authorize_transaction_modification! rendered or redirected
+[f618f78a-3041-4f08-9891-15472b299403] Completed 302 Found in 3ms (ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+[1bc6dc82-7664-4e70-90e3-cb42905809ed] Started GET "/invoices/1" for 172.30.11.146 at 2026-01-26 11:15:02 +0000
+[1bc6dc82-7664-4e70-90e3-cb42905809ed] Processing by InvoicesController#show as HTML
+[1bc6dc82-7664-4e70-90e3-cb42905809ed]   Parameters: {"id" => "1"}
+[1bc6dc82-7664-4e70-90e3-cb42905809ed]   Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+[1bc6dc82-7664-4e70-90e3-cb42905809ed] Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.0ms)
+- Gracefully stopping, waiting for requests to finish
