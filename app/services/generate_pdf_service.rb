@@ -127,7 +127,7 @@ class GeneratePdfService < ApplicationService
 
     total_comm_fee = invoice.transactions.sum { |t| t.tax_amount.to_f / 0.05 }
 
-    total_amount = invoice.transactions.sum(&:amount)
+    total_amount   = invoice.transactions.sum { |t| t.amount.to_f }
 
     pdf.table(
       [[
