@@ -86,14 +86,16 @@ class GeneratePdfService < ApplicationService
 
   def transactions_table(pdf)
     table_data = [
-      ["Transaction Date", "Particulars", "Amount", "GST", "Total"]
+      ["Transaction Date", "Particulars", "Amount", "Comm/Fee", "GST", "Total"]
     ]
 
     invoice.transactions.each do |t|
+      comm_fee = t.tax_amount.to_f / 0.05
       table_data << [
         t.transaction_date.strftime('%d-%b-%Y'),
         t.description,
         format_currency(t.amount),
+        format_currency(comm_fee),
         format_currency(t.tax_amount),
         format_currency(t.amount.to_f + t.tax_amount.to_f)
       ]
@@ -103,7 +105,7 @@ class GeneratePdfService < ApplicationService
       table_data,
       header: true,
       width: pdf.bounds.width,
-      column_widths: column_widths(pdf)
+      column_widths: Array.new(6, pdf.bounds.width / 6.0)
     ) do
       row(0).font_style = :bold
       row(0).background_color = "252D60"
@@ -116,27 +118,32 @@ class GeneratePdfService < ApplicationService
         size: 10
       }
 
-      columns(2..4).align = :right
+      columns(2..5).align = :right
     end
   end
 
   def totals(pdf)
     pdf.move_down 5
 
+    total_comm_fee = invoice.transactions.sum { |t| t.tax_amount.to_f / 0.05 }
+
+    total_amount = invoice.transactions.sum(&:amount)
+
     pdf.table(
       [[
         { content: "Total", colspan: 2 },
-        format_currency(invoice.subtotal),
+        format_currency(total_amount),
+        format_currency(total_comm_fee),
         format_currency(invoice.tax_total),
         format_currency(invoice.grand_total)
       ]],
       width: pdf.bounds.width,
-      column_widths: column_widths(pdf),
+      column_widths: Array.new(6, pdf.bounds.width / 6.0),
       cell_style: { borders: [], padding: [5, 5] }
     ) do
       row(0).font_style = :bold
       row(0).columns(0).align = :left
-      row(0).columns(2..4).align = :right
+      row(0).columns(2..5).align = :right
     end
   end
 

@@ -21,6 +21,11 @@ class InvoicesController < ApplicationController
       transactions: params['transaction_reference_numbers']
     ).run
 
+    if rows.blank?
+      flash[:alert] = "No transactions found for the provided references."
+      redirect_to new_invoice_path and return
+    end
+
     result = InvoiceCreationService.new(rows: rows, user: current_user).run
 
     flash[:notice] = "Invoice created successfully! Invoice number: #{result[:invoice_number]}"
